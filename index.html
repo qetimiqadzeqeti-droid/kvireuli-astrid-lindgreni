@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ასტრიდ ლინდგრენის კვირეული | II ა და II ბ კლასები</title>
+  
+  <!-- Typography: Noto Sans Georgian with fallback to Sylfaen -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Floating Confetti Canvas for Celebrations -->
+  <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+  <!-- Top Accessibility & Navigation Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <span class="logo-emoji" aria-hidden="true">📖✨</span>
+        <div class="logo-text">
+          <h1 class="main-title">ასტრიდ ლინდგრენის ჯადოსნური კვირეული</h1>
+          <p class="subtitle">II ა და II ბ კლასები • სიკეთე, მეგობრობა და თავისუფალი აზროვნება</p>
+        </div>
+      </div>
+      
+      <!-- Utility Controls: Sound Toggle, Font Size, Audio Read Mode -->
+      <div class="accessibility-controls" aria-label="დამხმარე ხელსაწყოები">
+        <button id="sound-toggle-btn" class="btn-ctrl" title="ხმის ჩართვა / გამორთვა" aria-label="ხმის ჩართვა ან გამორთვა">
+          <span class="ctrl-icon" id="sound-icon">🔊</span>
+          <span class="ctrl-text">ხმა: ჩართულია</span>
+        </button>
+        <button id="font-increase-btn" class="btn-ctrl" title="ტექსტის გადიდება" aria-label="ტექსტის გადიდება">
+          <span class="ctrl-icon">A+</span>
+          <span class="ctrl-text">დიდი შრიფტი</span>
+        </button>
+        <button id="help-modal-btn" class="btn-ctrl btn-help" title="დახმარება და ინსტრუქცია" aria-label="დახმარება">
+          <span class="ctrl-icon">💡</span>
+          <span class="ctrl-text">დახმარება</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="main-nav" aria-label="მთავარი ნავიგაცია">
+      <button class="nav-tab active" data-tab="tab-characters" aria-selected="true" role="tab">
+        <span class="tab-icon">🌟</span>
+        <span class="tab-title">პერსონაჟების სამყარო</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-quiz" aria-selected="false" role="tab">
+        <span class="tab-icon">🎮</span>
+        <span class="tab-title">ვიქტორინა და თამაშები</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-workshop" aria-selected="false" role="tab">
+        <span class="tab-icon">🎨</span>
+        <span class="tab-title">შემოქმედებითი სახელოსნო</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-library" aria-selected="false" role="tab">
+        <span class="tab-icon">📚</span>
+        <span class="tab-title">მოგზაურობა ბიბლიოთეკაში</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+
+    <!-- ========================================================== -->
+    <!-- TAB 1: პერსონაჟების სამყარო (CHARACTER WORLD)             -->
+    <!-- ========================================================== -->
+    <section id="tab-characters" class="tab-pane active" role="tabpanel" aria-labelledby="tab-characters">
+      <div class="section-intro">
+        <div class="intro-badge">💫 გაიცანი 4 საყვარელი გმირი</div>
+        <h2 class="section-heading">ვისთან ერთად ვმოგზაურობთ ამ კვირაში?</h2>
+        <p class="section-desc">
+          დააწკაპუნე პერსონაჟის ბარათზე, მოუსმინე მის ამბავს, გაიგე რა ღირებულებას გვასწავლის და უპასუხე მეგობრულ შეკითხვას!
+        </p>
+      </div>
+
+      <!-- Character Cards Grid -->
+      <div class="characters-grid">
+
+        <!-- Character 1: Pippi -->
+        <article class="character-card pippi-theme" data-char="pippi">
+          <div class="card-badge">🧡 სიკეთე და თავისუფლება</div>
+          <div class="card-visual">
+            <div class="avatar-circle">
+              <span class="char-emoji">👧🏼</span>
+            </div>
+            <div class="char-sparkles">🐒 🐎 ✨</div>
+          </div>
+          <div class="card-content">
+            <h3 class="char-name">პეპი გრძელწინდა</h3>
+            <p class="char-book">წიგნიდან: „პეპი გრძელწინდა“</p>
+            
+            <div class="simple-story-box">
+              <p class="simple-story">
+                პეპი მსოფლიოში ყველაზე ძლიერი და მხიარული გოგონაა. მას შეუძლია ცხენი ერთი ხელით ასწიოს!
+                მაგრამ მისი ყველაზე დიდი ძალა <strong>სიკეთე</strong> და <strong>სუსტების დაცვაა</strong>.
+              </p>
+            </div>
+
+            <div class="value-highlight">
+              <span class="value-icon">💎</span>
+              <div class="value-info">
+                <strong>მთავარი ღირებულება:</strong>
+                <span>თავისუფალი აზროვნება, გულუხვობა და სიკეთე</span>
+              </div>
+            </div>
+
+            <div class="reflection-box">
+              <div class="reflection-label">🤔 დაფიქრდი და უთხარი მეწყვილეს:</div>
+              <p class="reflection-text">„როგორ დაეხმარებოდი მეგობარს, თუ მას შენი ძალა და მხარდაჭერა დასჭირდებოდა?“</p>
+            </div>
+
+            <div class="card-action-bar">
+              <button class="btn-speak" data-text="პეპი გრძელწინდა მსოფლიოში ყველაზე ძლიერი და კეთილი გოგონაა. ის ყოველთვის იცავს მეგობრებს და ეხმარება მათ!">
+                🔊 მოუსმინე ამბავს
+              </button>
+              <button class="btn-secret-gift" data-gift="pippi">
+                🎁 პეპის ოქროს მონეტა
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Character 2: Karlsson -->
+        <article class="character-card karlsson-theme" data-char="karlsson">
+          <div class="card-badge">🚁 მეგობრობა და ფანტაზია</div>
+          <div class="card-visual">
+            <div class="avatar-circle">
+              <span class="char-emoji">🧒🏼</span>
+            </div>
+            <div class="char-sparkles">🚁 🍪 🎈</div>
+          </div>
+          <div class="card-content">
+            <h3 class="char-name">სახურავის ბინადარი კარლსონი</h3>
+            <p class="char-book">წიგნიდან: „სახურავის ბინადარი კარლსონი“</p>
+            
+            <div class="simple-story-box">
+              <p class="simple-story">
+                კარლსონი სახურავზე ცხოვრობს, ზურგზე პატარა პროპელერი აქვს და ძალიან უყვარს ტკბილეული.
+                მან ბიჭუნას მარტოობა დაავიწყა და მისი <strong>ერთგული მეგობარი</strong> გახდა.
+              </p>
+            </div>
+
+            <div class="value-highlight">
+              <span class="value-icon">💎</span>
+              <div class="value-info">
+                <strong>მთავარი ღირებულება:</strong>
+                <span>მეგობრობა, სიხარულის გაზიარება და ფანტაზია</span>
+              </div>
+            </div>
+
+            <div class="reflection-box">
+              <div class="reflection-label">🤔 დაფიქრდი და უთხარი მეწყვილეს:</div>
+              <p class="reflection-text">„რა გაახარებს შენს მეგობარს, როცა ის მოწყენილია?“</p>
+            </div>
+
+            <div class="card-action-bar">
+              <button class="btn-speak" data-text="კარლსონი სახურავზე ცხოვრობს. ის მხიარულია და ბიჭუნას ერთგული მეგობარია!">
+                🔊 მოუსმინე ამბავს
+              </button>
+              <button class="btn-secret-gift" data-gift="karlsson">
+                🍩 კარლსონის საჩუქარი
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Character 3: Emil -->
+        <article class="character-card emil-theme" data-char="emil">
+          <div class="card-badge">🌱 სამართლიანობა და ზრუნვა</div>
+          <div class="card-visual">
+            <div class="avatar-circle">
+              <span class="char-emoji">👦🏼</span>
+            </div>
+            <div class="char-sparkles">🧢 🪵 🥣</div>
+          </div>
+          <div class="card-content">
+            <h3 class="char-name">ემილის თავგადასავალი</h3>
+            <p class="char-book">წიგნიდან: „ემილის თავგადასავალი“</p>
+            
+            <div class="simple-story-box">
+              <p class="simple-story">
+                ემილი ძალიან ცელქი, მაგრამ უზომოდ <strong>კეთილშობილი და გულწრფელი</strong> ბიჭია.
+                როცა თავის მეგობარ ალფრედს გაუჭირდა, ემილმა ის დიდ ქარბუქში ექიმთან მიიყვანა და გადაარჩინა!
+              </p>
+            </div>
+
+            <div class="value-highlight">
+              <span class="value-icon">💎</span>
+              <div class="value-info">
+                <strong>მთავარი ღირებულება:</strong>
+                <span>სამართლიანობა, გამბედაობა და სხვებზე ზრუნვა</span>
+              </div>
+            </div>
+
+            <div class="reflection-box">
+              <div class="reflection-label">🤔 დაფიქრდი და უთხარი მეწყვილეს:</div>
+              <p class="reflection-text">„როგორ შეიძლება შეცდომა სიკეთითა და მზრუნველობით გამოვასწოროთ?“</p>
+            </div>
+
+            <div class="card-action-bar">
+              <button class="btn-speak" data-text="ემილი ცელქი, მაგრამ ძალიან კეთილი და მამაცი ბიჭია. მან თავისი მეგობარი გადაარჩინა!">
+                🔊 მოუსმინე ამბავს
+              </button>
+              <button class="btn-secret-gift" data-gift="emil">
+                🪵 ემილის ხის კაცუნა
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Character 4: Ronia -->
+        <article class="character-card ronia-theme" data-char="ronia">
+          <div class="card-badge">🌲 მშვიდობა და ბუნება</div>
+          <div class="card-visual">
+            <div class="avatar-circle">
+              <span class="char-emoji">👧🏽</span>
+            </div>
+            <div class="char-sparkles">🦅 🏰 🌿</div>
+          </div>
+          <div class="card-content">
+            <h3 class="char-name">ყაჩაღის ასული რონია</h3>
+            <p class="char-book">წიგნიდან: „ყაჩაღის ასული რონია“</p>
+            
+            <div class="simple-story-box">
+              <p class="simple-story">
+                რონია მამაცი და თავისუფალი გოგონაა, რომელიც უღრან ტყეში გაიზარდა.
+                მან ბირკთან დამეგობრება შეძლო, მიუხედავად იმისა, რომ მათი ოჯახები ერთმანეთს ემტერებოდნენ.
+                <strong>მეგობრობამ გაიმარჯვა!</strong>
+              </p>
+            </div>
+
+            <div class="value-highlight">
+              <span class="value-icon">💎</span>
+              <div class="value-info">
+                <strong>მთავარი ღირებულება:</strong>
+                <span>მეგობრობა ბარიერების გარეშე, მშვიდობა და ბუნების სიყვარული</span>
+              </div>
+            </div>
+
+            <div class="reflection-box">
+              <div class="reflection-label">🤔 დაფიქრდი და უთხარი მეწყვილეს:</div>
+              <p class="reflection-text">„როგორ დავუმეგობრდეთ ბავშვს, რომელიც ჩვენგან განსხვავდება?“</p>
+            </div>
+
+            <div class="card-action-bar">
+              <button class="btn-speak" data-text="რონია მამაცი გოგონაა. მან დაამტკიცა, რომ მეგობრობას შეუძლია ყველა დაბრკოლება დაამარცხოს!">
+                🔊 მოუსმინე ამბავს
+              </button>
+              <button class="btn-secret-gift" data-gift="ronia">
+                🌿 რონიას საგაზაფხულო ყვავილი
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Quick Vocabulary Helper for 2nd Graders / L2 Learners -->
+      <div class="vocab-helper-box">
+        <div class="vocab-header">
+          <span class="vocab-icon">💡</span>
+          <h3>პატარა ლექსიკონი ახალი და მნიშვნელოვანი სიტყვებისთვის</h3>
+        </div>
+        <div class="vocab-cards">
+          <div class="vocab-item">
+            <span class="v-word">სიკეთე:</span>
+            <span class="v-desc">როცა სხვებს ეხმარები და გულით ახარებ. ❤️</span>
+          </div>
+          <div class="vocab-item">
+            <span class="v-word">მეგობრობა:</span>
+            <span class="v-desc">ერთად თამაში, ერთგულება და მხარდაჭერა. 🤝</span>
+          </div>
+          <div class="vocab-item">
+            <span class="v-word">სამართლიანობა:</span>
+            <span class="v-desc">წესების დაცვა და ყველასთან თანაბრად მოქცევა. ⚖️</span>
+          </div>
+          <div class="vocab-item">
+            <span class="v-word">გულწრფელი:</span>
+            <span class="v-desc">ვინც ყოველთვის სიმართლეს ამბობს და ალალია. 🌟</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- TAB 2: ინტერაქტიული ვიქტორინა და თამაშები (QUIZ & GAMES)   -->
+    <!-- ========================================================== -->
+    <section id="tab-quiz" class="tab-pane" role="tabpanel" aria-labelledby="tab-quiz">
+      <div class="section-intro">
+        <div class="intro-badge">🎯 შეამოწმე შენი ცოდნა</div>
+        <h2 class="section-heading">მხიარული ვიქტორინა 7-8 წლის მკითხველებისთვის</h2>
+        <p class="section-desc">
+          უპასუხე 6 მარტივ შეკითხვას. სწორი პასუხისას გაისმება მხიარული ზარი და შეაგროვებ ვარსკვლავებს! ⭐
+        </p>
+      </div>
+
+      <!-- Quiz Wrapper -->
+      <div class="quiz-container">
+        <!-- Progress Header -->
+        <div class="quiz-status-bar">
+          <div class="quiz-step-info">
+            <span id="quiz-progress-text">შეკითხვა: 1 / 6</span>
+          </div>
+          <div class="quiz-stars-counter" title="შეწონილი ვარსკვლავები">
+            <span>შენი ვარსკვლავები:</span>
+            <span id="quiz-star-count" class="star-badge">0 ⭐</span>
+          </div>
+        </div>
+        <div class="progress-bar-track">
+          <div id="quiz-progress-fill" class="progress-bar-fill" style="width: 16.6%;"></div>
+        </div>
+
+        <!-- Question Box -->
+        <div id="quiz-question-card" class="quiz-card">
+          <div class="question-header">
+            <span id="q-category-badge" class="q-badge">📖 პეპი გრძელწინდა</span>
+            <button id="q-read-btn" class="btn-icon-read" title="შეკითხვის წაკითხვა" aria-label="შეკითხვის გახმოვანება">
+              🔊 მოუსმინე შეკითხვას
+            </button>
+          </div>
+          
+          <h3 id="q-text" class="question-title">
+            როგორი გოგონაა პეპი გრძელწინდა და რა არის მისი ყველაზე დიდი ძალა?
+          </h3>
+
+          <div id="q-options" class="options-container">
+            <!-- Populated by JavaScript -->
+          </div>
+
+          <!-- Feedback Box -->
+          <div id="quiz-feedback" class="quiz-feedback-box hidden" aria-live="polite">
+            <div id="feedback-icon" class="feedback-icon">🎉</div>
+            <div class="feedback-text-wrap">
+              <strong id="feedback-title" class="feedback-title">ყოჩაღ! სწორია! 🌟</strong>
+              <p id="feedback-message" class="feedback-message">პეპი ყველაზე ძლიერია, მაგრამ მისი მთავარი ძალა სიკეთეა!</p>
+            </div>
+          </div>
+
+          <div class="quiz-bottom-controls">
+            <button id="next-q-btn" class="btn-primary hidden">
+              შემდეგი შეკითხვა ➡️
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Completion View (Hidden by default) -->
+        <div id="quiz-finished-card" class="quiz-finished-card hidden">
+          <div class="celebration-trophy">🏆🌟🎉</div>
+          <h3 class="finished-title">ყოჩაღ! შენ ნამდვილი მკითხველი ხარ!</h3>
+          <p class="finished-subtitle">
+            შენ წარმატებით უპასუხე ასტრიდ ლინდგრენის ვიქტორინას და დააგროვე:
+          </p>
+          <div class="final-score-display">
+            <span id="final-score-text">6-დან 6 ვარსკვლავი</span> ⭐⭐⭐
+          </div>
+          <p class="finished-msg">
+            შენ იცი, რა არის სიკეთე, მეგობრობა და სამართლიანობა!
+          </p>
+          <button id="restart-quiz-btn" class="btn-primary">
+            🔄 თავიდან დაწყება
+          </button>
+        </div>
+      </div>
+
+      <!-- Bonus Mini-Game: Value Matcher -->
+      <div class="matching-game-section">
+        <div class="matching-intro">
+          <span class="matching-badge">🧩 მინი-თამაში</span>
+          <h3>დააკავშირე გმირი მის მთავარ ღირებულებასთან!</h3>
+          <p>დააწკაპუნე პერსონაჟზე, შემდეგ კი შესაბამის ღირებულებაზე.</p>
+        </div>
+
+        <div class="matcher-board">
+          <div class="matcher-col" id="matcher-chars">
+            <div class="matcher-item" data-id="pippi">
+              <span>👧🏼 პეპი</span>
+            </div>
+            <div class="matcher-item" data-id="karlsson">
+              <span>🚁 კარლსონი</span>
+            </div>
+            <div class="matcher-item" data-id="emil">
+              <span>👦🏼 ემილი</span>
+            </div>
+            <div class="matcher-item" data-id="ronia">
+              <span>🌲 რონია</span>
+            </div>
+          </div>
+
+          <div class="matcher-divider">
+            <span>➡️ დაკავშირება ⬅️</span>
+          </div>
+
+          <div class="matcher-col" id="matcher-values">
+            <div class="matcher-item" data-id="emil">
+              <span>⚖️ სამართლიანობა და სხვების გადარჩენა</span>
+            </div>
+            <div class="matcher-item" data-id="pippi">
+              <span>🌈 თავისუფალი აზროვნება და სიკეთე</span>
+            </div>
+            <div class="matcher-item" data-id="ronia">
+              <span>🕊️ მეგობრობა ბარიერების გარეშე</span>
+            </div>
+            <div class="matcher-item" data-id="karlsson">
+              <span>🎈 მხიარული მეგობრობა და ფანტაზია</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="matcher-result" class="matcher-result hidden">
+          🎉 ყოჩაღ! ყველა გმირი და ღირებულება სწორად დააკავშირე!
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- TAB 3: შემოქმედებითი და საკომუნიკაციო სახელოსნო            -->
+    <!-- ========================================================== -->
+    <section id="tab-workshop" class="tab-pane" role="tabpanel" aria-labelledby="tab-workshop">
+      <div class="section-intro">
+        <div class="intro-badge">🎨 ერთად ვხატავთ, ვსაუბრობთ და ვმეგობრობთ</div>
+        <h2 class="section-heading">შემოქმედებითი და საკომუნიკაციო კუთხე</h2>
+        <p class="section-desc">
+          ეს სივრცე შექმნილია იმისთვის, რომ ქართველმა და ეთნიკური უმცირესობის თანაკლასელებმა ერთმანეთს გაუზიარონ იდეები, 
+          გაიცნონ ერთმანეთის ენა და ერთად შექმნან საოცარი ნახატები!
+        </p>
+      </div>
+
+      <!-- Interactive Tool 1: Pair Discussion & Role-Play Prompts -->
+      <div class="workshop-card">
+        <div class="workshop-header">
+          <div class="w-icon">🎲</div>
+          <div>
+            <h3 class="w-title">„მეგობრობის კამათელი“ — დავალება მეწყვილეებისთვის</h3>
+            <p class="w-subtitle">დააჭირე ღილაკს და შეასრულეთ სახალისო სავარჯიშო შენს გვერდით მჯდომ მეგობართან ერთად!</p>
+          </div>
+        </div>
+
+        <div class="prompt-generator-box">
+          <div id="prompt-display" class="prompt-display">
+            <span class="prompt-icon">🌟</span>
+            <p id="prompt-text" class="prompt-text">
+              დააჭირე ღილაკს „ახალი დავალება“ და დაიწყეთ მხიარული თამაში!
+            </p>
+          </div>
+          
+          <button id="roll-prompt-btn" class="btn-primary btn-large">
+            🎲 ახალი დავალება მეწყვილეებისთვის!
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Tool 2: Digital Friendly Drawing Canvas -->
+      <div class="workshop-card">
+        <div class="workshop-header">
+          <div class="w-icon">🖌️</div>
+          <div>
+            <h3 class="w-title">ციფრული სახატავი დაფა: „ჩემი ჯადოსნური ამბავი“</h3>
+            <p class="w-subtitle">დახატეთ პეპის სახლი, კარლსონის პროპელერი, ან თქვენი საუკეთესო მეგობარი!</p>
+          </div>
+        </div>
+
+        <div class="canvas-wrapper">
+          <!-- Canvas Toolbar -->
+          <div class="canvas-toolbar">
+            <div class="tool-group">
+              <span class="tool-label">ფერები:</span>
+              <button class="color-dot active" style="background-color: #2c3e50;" data-color="#2c3e50" title="შავი"></button>
+              <button class="color-dot" style="background-color: #e74c3c;" data-color="#e74c3c" title="წითელი"></button>
+              <button class="color-dot" style="background-color: #f39c12;" data-color="#f39c12" title="ნარინჯისფერი"></button>
+              <button class="color-dot" style="background-color: #27ae60;" data-color="#27ae60" title="მწვანე"></button>
+              <button class="color-dot" style="background-color: #2980b9;" data-color="#2980b9" title="ლურჯი"></button>
+              <button class="color-dot" style="background-color: #8e44ad;" data-color="#8e44ad" title="იისფერი"></button>
+              <button class="color-dot" style="background-color: #e91e63;" data-color="#e91e63" title="ვარდისფერი"></button>
+            </div>
+
+            <div class="tool-group">
+              <span class="tool-label">ფუნჯის ზომა:</span>
+              <button class="brush-size-btn" data-size="4">წვრილი</button>
+              <button class="brush-size-btn active" data-size="8">საშუალო</button>
+              <button class="brush-size-btn" data-size="16">სქელი</button>
+            </div>
+
+            <div class="tool-group">
+              <span class="tool-label">შტამპები:</span>
+              <button class="stamp-btn" data-stamp="⭐">⭐</button>
+              <button class="stamp-btn" data-stamp="❤️">❤️</button>
+              <button class="stamp-btn" data-stamp="🍎">🍎</button>
+              <button class="stamp-btn" data-stamp="🎈">🎈</button>
+              <button class="stamp-btn" data-stamp="🌸">🌸</button>
+            </div>
+
+            <div class="tool-group actions">
+              <button id="clear-canvas-btn" class="btn-tool btn-clear">
+                🗑️ გასუფთავება
+              </button>
+              <button id="download-canvas-btn" class="btn-tool btn-download">
+                💾 ნახატის შენახვა
+              </button>
+            </div>
+          </div>
+
+          <!-- Drawing Area -->
+          <div class="canvas-container">
+            <canvas id="drawing-board" width="800" height="420"></canvas>
+          </div>
+          <p class="canvas-hint">💡 დახატე თითით (სმარტ-დაფაზე ან პლანშეტზე) ან მაუსით!</p>
+        </div>
+      </div>
+
+      <!-- Interactive Tool 3: Tree of Kindness -->
+      <div class="workshop-card">
+        <div class="workshop-header">
+          <div class="w-icon">🌳</div>
+          <div>
+            <h3 class="w-title">„სიკეთის ხე“ — დაამატე შენი კეთილი სიტყვა</h3>
+            <p class="w-subtitle">დააწკაპუნე სიტყვაზე და ის აყვავდება ჩვენს საერთო მეგობრობის ხეზე!</p>
+          </div>
+        </div>
+
+        <div class="kindness-tree-container">
+          <div class="word-picker-bar">
+            <button class="btn-leaf-pick" data-word="მადლობა! ❤️">მადლობა! ❤️</button>
+            <button class="btn-leaf-pick" data-word="დაგეხმარები! 🤝">დაგეხმარები! 🤝</button>
+            <button class="btn-leaf-pick" data-word="მოდი ვითამაშოთ! ⚽">მოდი ვითამაშოთ! ⚽</button>
+            <button class="btn-leaf-pick" data-word="შენ კარგი მეგობარი ხარ! 🌟">შენ კარგი მეგობარი ხარ! 🌟</button>
+            <button class="btn-leaf-pick" data-word="გამარჯობა, მეგობარო! 👋">გამარჯობა, მეგობარო! 👋</button>
+            <button class="btn-leaf-pick" data-word="ყოჩაღ! 🎉">ყოჩაღ! 🎉</button>
+          </div>
+
+          <div id="tree-canopy" class="tree-display">
+            <div class="tree-trunk"></div>
+            <div id="tree-leaves" class="tree-leaves-area">
+              <span class="leaf-bubble">მადლობა! ❤️</span>
+              <span class="leaf-bubble">შენ კარგი მეგობარი ხარ! 🌟</span>
+              <span class="leaf-bubble">დაგეხმარები! 🤝</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- TAB 4: მოგზაურობა საუნივერსიტეტო ბიბლიოთეკაში               -->
+    <!-- ========================================================== -->
+    <section id="tab-library" class="tab-pane" role="tabpanel" aria-labelledby="tab-library">
+      <div class="section-intro">
+        <div class="intro-badge">🏛️ მოგზაურობა წიგნების სამყაროში</div>
+        <h2 class="section-heading">მზადება საუნივერსიტეტო ბიბლიოთეკაში ვიზიტისთვის</h2>
+        <p class="section-desc">
+          მალე II ა და II ბ კლასები ვესტუმრებით საუნივერსიტეტო ბიბლიოთეკას! გაეცანი წესებს და მოემზადე წიგნების საგანძურის საპოვნელად.
+        </p>
+      </div>
+
+      <!-- Library Etiquette Cards -->
+      <div class="library-rules-grid">
+        <div class="rule-card">
+          <div class="rule-icon">🤫</div>
+          <h4 class="rule-title">1. ჩუმი და მშვიდი ხმა</h4>
+          <p class="rule-desc">
+            ბიბლიოთეკაში ადამიანები კითხულობენ და მეცადინეობენ. ჩვენ ვსაუბრობთ ჩურჩულით ან დაბალი ხმით.
+          </p>
+          <div class="rule-tip">💡 „როგორც პეპის ფისო ნაზად დადის, ისე მშვიდად ვსაუბრობთ.“</div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-icon">📖</div>
+          <h4 class="rule-title">2. სუფთა ხელები და სიფრთხილე</h4>
+          <p class="rule-desc">
+            წიგნს ვეხებით მხოლოდ სუფთა ხელებით. ფურცლებს ნაზად ვშლით კუთხიდან, არ ვკეცავთ და არ ვხატავთ მასზე.
+          </p>
+          <div class="rule-tip">💡 „წიგნი ჩვენი მეგობარია და მას გაფრთხილება სჭირდება.“</div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-icon">🚶</div>
+          <h4 class="rule-title">3. მშვიდი ნაბიჯი დარბაზში</h4>
+          <p class="rule-desc">
+            თაროებს შორის არ დავრბივართ. ნელა და ფრთხილად ვსეირნობთ, რომ წიგნები ან სხვები არ შევაწუხოთ.
+          </p>
+          <div class="rule-tip">💡 „დააკვირდი დიდ თაროებს — ისინი სავსეა საიდუმლოებებით!“</div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-icon">🔖</div>
+          <h4 class="rule-title">4. სანიშნის გამოყენება</h4>
+          <p class="rule-desc">
+            თუ კითხვას დროებით ვწყვეტთ, წიგნში ვდებთ ლამაზ ქაღალდის სანიშნეს. არასოდეს გადავკეცოთ ფურცლის კუთხე!
+          </p>
+          <div class="rule-tip">💡 „სანიშნე გვაჩვენებს, სად გავჩერდით.“</div>
+        </div>
+      </div>
+
+      <!-- How books are placed on shelves -->
+      <div class="shelf-guide-box">
+        <div class="shelf-guide-header">
+          <span class="guide-icon">🔍</span>
+          <div>
+            <h3>როგორ პოულობენ წიგნებს ბიბლიოთეკაში?</h3>
+            <p>ყველა წიგნს აქვს თავისი „სახლი“ თაროზე — ავტორის გვარის პირველი ასოს (ანბანის) და თემის მიხედვით!</p>
+          </div>
+        </div>
+        <div class="shelf-visual-row">
+          <div class="shelf-slot">
+            <span class="shelf-letter">ა</span>
+            <span class="shelf-book">ასტრიდ ლინდგრენი</span>
+          </div>
+          <div class="shelf-slot">
+            <span class="shelf-letter">დ</span>
+            <span class="shelf-book">დუმბაძე ნოდარ</span>
+          </div>
+          <div class="shelf-slot">
+            <span class="shelf-letter">ე</span>
+            <span class="shelf-book">ეგზიუპერი ანტუან</span>
+          </div>
+          <div class="shelf-slot">
+            <span class="shelf-letter">ი</span>
+            <span class="shelf-book">იაკობ გოგებაშვილი</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Book Treasure Hunt -->
+      <div class="treasure-hunt-card">
+        <div class="treasure-header">
+          <div class="t-badge">🗺️ ინტერაქტიული ქვესტი</div>
+          <h3 class="t-title">„წიგნების საგანძურის ძიება“ ბიბლიოთეკაში</h3>
+          <p class="t-subtitle">
+            მონიშნე ყოველი დავალება, როდესაც ბიბლიოთეკაში მას შეასრულებ ან კლასში მოემზადები:
+          </p>
+        </div>
+
+        <div class="checklist-items" id="library-checklist">
+          <label class="check-item">
+            <input type="checkbox" class="quest-checkbox" data-points="1">
+            <span class="custom-check"></span>
+            <span class="check-text">
+              <strong>1. ვიპოვე წიგნი, რომელსაც აქვს წითელი ან ყვითელი ყდა</strong> 🔴🟡
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="quest-checkbox" data-points="1">
+            <span class="custom-check"></span>
+            <span class="check-text">
+              <strong>2. ვნახე საბავშვო ზღაპრებისა და მოთხრობების თარო</strong> 📚
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="quest-checkbox" data-points="1">
+            <span class="custom-check"></span>
+            <span class="check-text">
+              <strong>3. გავიცანი ბიბლიოთეკარი და ვუთხარი ღიმილით „გამარჯობა!“</strong> 👋
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="quest-checkbox" data-points="1">
+            <span class="custom-check"></span>
+            <span class="check-text">
+              <strong>4. ვიპოვე ასტრიდ ლინდგრენის რომელიმე წიგნი თაროზე</strong> 🌟
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="quest-checkbox" data-points="1">
+            <span class="custom-check"></span>
+            <span class="check-text">
+              <strong>5. დავაკვირდი ყველაზე დიდ, სქელ ან ძველ წიგნს</strong> 🔍
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="quest-checkbox" data-points="1">
+            <span class="custom-check"></span>
+            <span class="check-text">
+              <strong>6. ჩემს მეწყვილესთან ერთად მშვიდად გადავფურცლე ერთი წიგნი</strong> 🤝
+            </span>
+          </label>
+        </div>
+
+        <!-- Quest Progress -->
+        <div class="quest-progress-box">
+          <div class="quest-status-text">
+            <span>შესრულებული დავალებები:</span>
+            <strong id="quest-count">0 / 6</strong>
+          </div>
+          <div class="progress-bar-track">
+            <div id="quest-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Award / Certificate Generator -->
+        <div id="quest-award-box" class="quest-award-box hidden">
+          <div class="award-header">
+            <span class="medal-icon">🎖️</span>
+            <h4>გილოცავ! შენ გახდი „უნივერსიტეტის საპატიო პატარა მკითხველი“!</h4>
+          </div>
+          <p class="award-instructions">ჩაწერე შენი სახელი და კლასი, რომ მიიღო პერსონალური დიპლომი:</p>
+          
+          <div class="diploma-input-row">
+            <input type="text" id="student-name-input" placeholder="ჩაწერე შენი სახელი და გვარი..." maxlength="40">
+            <select id="student-class-select">
+              <option value="II ა კლასი">II ა კლასი</option>
+              <option value="II ბ კლასი">II ბ კლასი</option>
+            </select>
+            <button id="generate-certificate-btn" class="btn-primary">
+              📜 დიპლომის ნახვა და ბეჭდვა
+            </button>
+          </div>
+
+          <!-- Printable Diploma Area -->
+          <div id="printable-certificate" class="printable-certificate hidden">
+            <div class="cert-border">
+              <div class="cert-header">
+                <span class="cert-star">⭐</span>
+                <h2>საპატიო მკითხველის დიპლომი</h2>
+                <span class="cert-star">⭐</span>
+              </div>
+              <p class="cert-award-to">გადაეცემა II კლასის წარჩინებულ მკვლევარს:</p>
+              <h3 id="cert-name-display" class="cert-name">ანა ბერიძე</h3>
+              <p id="cert-class-display" class="cert-class">II ა კლასი</p>
+              <div class="cert-body">
+                „ასტრიდ ლინდგრენის კვირეულში“ აქტიური მონაწილეობისთვის,
+                სიკეთის, მეგობრობისა და წიგნების სიყვარულისთვის!
+              </div>
+              <p class="cert-date" id="cert-date-display">📅 2026 წლის ნოემბერი</p>
+              <div class="cert-footer">
+                <div class="cert-sign">
+                  <span>🏛️ საუნივერსიტეტო ბიბლიოთეკა</span>
+                </div>
+                <div class="cert-stamp">
+                  <span>🏅 წარმატებული მკითხველი</span>
+                </div>
+                <div class="cert-sign">
+                  <span>👩‍🏫 პედაგოგი</span>
+                </div>
+              </div>
+            </div>
+            <button id="print-cert-btn" class="btn-primary btn-print">
+              🖨️ დიპლომის ამობეჭდვა
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Help & Teacher Guide Modal -->
+  <div id="help-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="help-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="help-title">💡 მასწავლებლისა და მოსწავლის გზამკვლევი</h3>
+        <button id="close-help-modal" class="btn-close" aria-label="დახურვა">✖</button>
+      </div>
+      <div class="modal-body">
+        <h4>🌟 როგორ გამოვიყენოთ ეს პორტალი გაკვეთილზე:</h4>
+        <ul>
+          <li><strong>სმარტ-დაფაზე:</strong> თითოეული ჩანართი ოპტიმიზებულია საკლასო სმარტ-დაფაზე საჩვენებლად. გამოიყენეთ „დიდი შრიფტი“ უკანა მერხებიდან უკეთ დასანახად.</li>
+          <li><strong>ეთნიკური უმცირესობის მოსწავლეებისთვის:</strong> ტექსტი შედგენილია მარტივი, მოკლე წინადადებებით. გამოიყენეთ ღილაკი <strong>„🔊 მოუსმინე“</strong>, რათა მოსწავლეებმა მოისმინონ სწორი ქართული გამოთქმა.</li>
+          <li><strong>წყვილებში მუშაობა:</strong> სახელოსნოს ჩანართში გამოიყენეთ „მეგობრობის კამათელი“, რათა ქართველმა და არაქართულენოვანმა მოსწავლეებმა ერთმანეთს გაუზიარონ აზრები.</li>
+          <li><strong>ბიბლიოთეკის ექსკურსია:</strong> ბიბლიოთეკაში წასვლის წინ გადაამოწმეთ ქცევის წესები და შეასრულეთ „საგანძურის ძიების“ ქვესტი.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-ok-btn" class="btn-primary">გასაგებია, დავიწყოთ! 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p class="footer-copy">
+        ასტრიდ ლინდგრენის კვირეული • II ა და II ბ კლასები • შექმნილია სიყვარულითა და მზრუნველობით ❤️
+      </p>
+      <p class="footer-note">
+        დამზადებულია საგანმანათლებლო, ინკლუზიური და ეთიკური სტანდარტების სრული დაცვით.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
